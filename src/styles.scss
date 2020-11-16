@@ -1,0 +1,22 @@
+$orange: orange;
+.flex{
+    display: flex;
+}
+.fd-row{
+    flex-direction: row;
+}
+.fd-column{
+    flex-direction: column;
+}
+.jc-center{
+    justify-content: center;
+}
+.jc-sb{
+    justify-content: space-between;
+}
+.jc-sa{
+    justify-content: space-around;
+}
+.wrap{
+    flex-wrap: wrap;
+}

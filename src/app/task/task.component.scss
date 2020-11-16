@@ -1,0 +1,42 @@
+.task {
+    &__header {
+        width: 80%;
+        height: auto;
+        font-size: 1.3em;
+        margin: 0;
+        margin: auto 0;
+    }
+    &--done {
+        background-color: rgb(240, 240, 240);
+        color: rgb(116, 116, 116);
+        text-decoration: line-through;
+        &__done {
+            display: none;
+        }
+        &__edit {
+            display: none;
+        }
+    }
+}
+.icon {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 05px;
+    color: rgb(116, 116, 116);
+
+    &__done:hover {
+        color: rgb(29, 192, 29);
+    }
+    &__edit:hover {
+        color: rgb(60, 60, 255);
+    }
+    &__delete:hover {
+        color: red;
+    }
+    &--none {
+        display: none;
+    }
+}
+.done {
+    color: rgb(29, 192, 29);
+}

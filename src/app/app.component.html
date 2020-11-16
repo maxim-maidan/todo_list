@@ -1,0 +1,24 @@
+<div class="list">
+  <hr>
+  <h1 class="list__header">Todo list</h1>
+  <div class="list__form flex jd-row jc-center" [formGroup]="taskForm">
+    <input type="text" class="list__input" formControlName="taskInput">
+    <button class="list__add button" (click)="addTask()">Add item</button>
+  </div>
+  <div class="list__field flex fd-row jc-sa wrap">
+    <app-task 
+      *ngFor="let task of tasks" 
+      class="task" 
+      [title]="task"
+      (deleteById)="deleteById($event)" 
+      (makeDoneById)="makeDoneById($event)" 
+      (changeById)="changeById($event)"
+    >
+    </app-task>
+  </div>
+  <hr>
+  <div class="list__footer flex jc-center">
+    <button class="list__clear button" (click)="clearList()">Clear all tasks</button>
+    <button class="list__clear button" (click)="clearCompletedList()">Clear completed tasks</button>
+  </div>
+</div>

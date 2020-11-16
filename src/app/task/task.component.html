@@ -1,0 +1,19 @@
+<div class="task flex fd-row jc-sb" [class.task--done]="title.isDone">
+    <h1 class="task__header">{{title.name}}</h1>
+    <div class="task__wrapper">
+        <i class="fa fa-check task__icon icon icon__done" 
+            (click)="makeDone(title.id)"
+            [class.icon--none]="title.isDone"
+        >
+        </i>
+        <i class="fa fa-edit task__icon icon icon__edit" 
+            (click)="changeTask(title.id)"
+            [class.icon--none]="title.isDone"
+        >
+        </i>
+        <i class="fa fa-trash task__icon icon icon__delete" 
+            (click)="deleteTask(title.id)"
+            >
+        </i>
+    </div>
+</div>
