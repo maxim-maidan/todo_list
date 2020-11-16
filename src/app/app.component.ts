@@ -15,10 +15,11 @@ export interface Task {
 })
 export class AppComponent implements OnInit {
   tasks: Task[] = [{ id: uuid(), name: "Learn Angular", isDone: false }];
+  taskId: string;
   task: string;
   selectedTaskId: string;
   taskForm: FormGroup;
-  
+
   ngOnInit() {
     this.taskForm = new FormGroup({
       taskInput: new FormControl(null, Validators.required)
@@ -54,9 +55,15 @@ export class AppComponent implements OnInit {
         this.taskForm.setValue({ taskInput: elem.name });
       }
     });
-    this.deleteById(id);
+    this.taskId = id;
   }
-  clearCompletedList(){
+  clearCompletedList() {
     this.tasks = this.tasks.filter(elem => !elem.isDone);
+  }
+  updateTask() {
+    const name = this.taskForm.value.taskInput;
+    this.tasks = this.tasks.map(elem => elem.id === this.taskId ? {...elem, name} : elem);
+    this.taskForm.reset();
+    this.taskId = '';
   }
 }
